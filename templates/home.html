@@ -1,0 +1,55 @@
+
+{% extends 'starter.html' %}
+
+{% block doctorimg %} 
+ <img src="{{ doctor.image.url }}" class="img-circle elevation-2" alt="User Image"  width="70" height="70">
+
+ {% endblock %}
+
+
+
+{% block doctorname %} 
+
+{{ doctor.full_name}} 
+{% endblock%}
+
+{% block data %}
+ <div class="row"> 
+{% for unit in units %}
+{% if unit.item %}
+ 
+          <div class="col-lg-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"> {{ forloop.counter }} - {{ unit.description}}  </h5>
+
+                <p class="card-text">
+                 الوحدة : {{ unit.home_standrd }} 
+                </p>
+                <p class="card-text">
+                 الوزن : {{ unit.home_standrd_wieght}}  جرام
+                </p>
+                <p class="card-text">
+                 مجموعة الاطعمة : {{ unit.item_group}} 
+                </p>
+                <p class="card-text">
+                الطاقة : {{unit.enerygy}}
+                </p>
+
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+             </div>
+          <!-- /.col-md-6 -->
+        
+          <!-- /.col-md-6 -->
+        
+
+{% endif %}
+{% endfor %}
+</div>
+{% endblock %}
+
+           
+         

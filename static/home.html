@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">الصنف</th>
+      <th scope="col">الوحدة</th>
+      <th scope="col">الوزن</th>
+      <th scope="col">المجموعة</th>
+      <th scope="col">الطاقة</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for unit in units %} {% if unit.item %}<tr> <th scope="row"> {{ forloop.counter }}</th> 
+  																			<td> {{ unit.description}}         </td>
+  																			<td>  {{ unit.home_standrd }}       </td> 
+  																			<td> {{ unit.home_standrd_wieght}} </td>
+  																			<td>  {{ unit.item_group}}         </td>
+  																			<td>  {{unit.enerygy}}             </td> 
+  																			 </tr>  {% endif %}{% endfor %}
+    
+  </tbody>
+</table>
+
+
+{% endblock %}
