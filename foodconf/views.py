@@ -4,10 +4,10 @@ from django.contrib.auth.decorators import login_required
 # Createfrom your views here.
 from .models import Unit
 from django.core.paginator import Paginator
-from .serializers import AccountSerializer
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+# from .serializers import AccountSerializer
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
+# from rest_framework import status
 
 
 
@@ -36,16 +36,16 @@ def admin_home(request):
 
 
 
-def api_test_view(request):
-	snippets = Unit.objects.all()
-	serializer = AccountSerializer(snippets, many=True)
-	return render( request,'api-view.html' ,{'data':serializer.data})
+# def api_test_view(request):
+# 	snippets = Unit.objects.all()
+# 	serializer = AccountSerializer(snippets, many=True)
+# 	return render( request,'api-view.html' ,{'data':serializer.data})
 
-class UnitsList(APIView):
-	template_name = 'api-view.html'
+# class UnitsList(APIView):
+# 	template_name = 'api-view.html'
 
-	queryset = Unit.objects.all()
-	def get(self, request, format=None):
-		snippets = Unit.objects.all()
-		serializer = AccountSerializer(snippets, many=True)
-		return Response(serializer.data)
+# 	queryset = Unit.objects.all()
+# 	def get(self, request, format=None):
+# 		snippets = Unit.objects.all()
+# 		serializer = AccountSerializer(snippets, many=True)
+# 		return Response(serializer.data)

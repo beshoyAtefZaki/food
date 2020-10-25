@@ -17,15 +17,15 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path ,include
-from foodconf.views import home ,admin_home ,UnitsList,api_test_view
+from foodconf.views import home ,admin_home
 from doctors.views import profile_page ,loginpage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
      path('profile/', profile_page, name='profile'),
       path('logindc/', loginpage, name='logindc'),
-    path('test/', api_test_view, name='api-test'),
+    # path('test/', api_test_view, name='api-test'),
     path('start/', admin_home, name='start'),
-    path('api-view', UnitsList.as_view(), name='api-view'),
-     path('api-auth/', include('rest_framework.urls')),
+    # path('api-view', UnitsList.as_view(), name='api-view'),
+     
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

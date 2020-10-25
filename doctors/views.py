@@ -3,6 +3,11 @@ from django.contrib.auth.decorators import login_required
 from .models import DoctorProfile
 # Create your views here.
 from django.contrib.auth import authenticate, login
+
+
+
+
+
 @login_required(login_url='/logindc/')
 def profile_page(request):
 	doctor = None
