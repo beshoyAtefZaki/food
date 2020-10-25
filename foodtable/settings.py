@@ -142,7 +142,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = "/home/beshoy/Desktop/peter/food/foodtable/templates/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = "/home/beshoy/Desktop/peter/food/foodtable/templates/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'templates/media')
